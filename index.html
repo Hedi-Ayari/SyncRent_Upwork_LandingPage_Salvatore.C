@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-TW" xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>SyncRent</title>
+    <meta name="description" content="SyncRent">
+    <link rel="icon" href="img/favicon.png" sizes="32x32" type="image/png">
+    <!-- custom.css -->
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- bootstrap.min.css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+
+    <!-- AOS -->
+    <link rel="stylesheet" href="css/aos.css">
+    <script>
+        function formSubmit() {
+            var emailInput = document.querySelector('.inputEmail');
+            var userEmail = emailInput.value;
+
+            // Make a POST request to your Node.js server
+            fetch('http://localhost:3000/submit-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email: userEmail }),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success!', data);
+                    showSuccessToast("You have successfully joined!");
+
+                })
+                .catch(error => {
+                    console.error('Error!', error);
+                    // Handle error as needed
+                });
+        }
+        function showNotification(message) {
+    // Check if the browser supports notifications
+    if (!("Notification" in window)) {
+        console.error("This browser does not support desktop notifications");
+        return;
+    }
+
+
+    // Request permission to show notifications
+    
+
+}
+function showSuccessToast(message) {
+    Toastify({
+        text: message,
+        duration: 3000,  // Duration in milliseconds
+        close: true,
+        gravity: "bottom",  // Position: "top", "bottom", "left", "right"
+        position: "right",  // Position: "top", "bottom", "left", "right"
+        backgroundColor: "green",  // Background color
+        stopOnFocus: true,  // Stop timeout when the notification is clicked
+    }).showToast();
+}
+
+// Example usage
+showSuccessToast("You have successfully joined!");
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    
+    <!-- Schema.org Organization -->
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "Organization",
+            "name": "SyncRent",
+            "url": "Your website URL",
+            "logo": "URL to your logo image",
+            "contactPoint": [{
+                "@type": "ContactPoint",
+                "telephone": "+40 20155488",
+                "contactType": "customer service"
+            }]
+        }
+    </script>
+</head>
+
+<body>
+    <!-- banner -->
+    <div class="jumbotron jumbotron-fluid" id="banner" style="background-image: url(img/banner-bk.jpg);">
+        <div class="container text-center text-md-left">
+            <header>
+                <div class="row justify-content-between">
+                    <div class="col-2">
+                        <img src="img/logo.png" alt="logo">
+                    </div>
+                    <div class="col-6 align-self-center text-right">
+                        <a href="#" class="text-white lead">Get Early Access</a>
+                    </div>
+                </div>
+            </header>
+            <h1 data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true"
+                class="display-3 text-white font-weight-bold my-5">
+                SyncRent is the Future<br> For the Co-renting
+            </h1>
+            <p data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true"
+                class="lead text-white my-4">
+                A web platform enabling individuals seeking rental spaces <br> to create groups, facilitating online
+                meetings to strategize expense-sharing.
+                <br>
+            </p>
+            <div>
+                <input class="inputEmail" type="email" placeholder="email">
+                <a href="#" data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true"
+                class="btn my-4 font-weight-bold atlas-cta cta-green" onclick="formSubmit()">Join Us</a>
+    
+            </div>
+        </div>
+    </div>
+
+    <!-- three-blcok -->
+    <div class="container my-5 py-2">
+        <h2 class="text-center font-weight-bold my-5">How it wokrs ?</h2>
+        <div class="row">
+            <div data-aos="fade-up" data-aos-delay="0" data-aos-duration="1000" data-aos-once="true"
+                class="col-md-4 text-center">
+                <img src="img/smart-protect-1.jpg" alt="Anti-spam" class="mx-auto">
+                <h4>Create a Rental Group</h4>
+                <p>Initiate your shared adventure by effortlessly crafting a rental group with SyncRent's user-friendly
+                    interface.</p>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-once="true"
+                class="col-md-4 text-center">
+                <img src="img/smart-protect-2.jpg" alt="Phishing Detect" class="mx-auto">
+                <h4>Join or Form Groups</h4>
+                <p>Browse and join existing groups or tailor your own, seamlessly connecting with fellow travelers or
+                    remote workers on SyncRent.</p>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000" data-aos-once="true"
+                class="col-md-4 text-center">
+                <img src="img/smart-protect-3.jpg" alt="Smart Scan" class="mx-auto">
+                <h4>Automated Payment and Feedback</h4>
+                <p>Experience worry-free transactions and build trust through SyncRent's automated payment system and
+                    feedback mechanism.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- feature (skew background) -->
+    <!-- ... (Your existing content) ... -->
+
+    <!-- feature (green background) -->
+    <div class="jumbotron jumbotron-fluid feature" id="feature-last">
+        <div class="container">
+            <div class="row justify-content-between text-center text-md-left">
+                <div data-aos="fade-left
+
+" data-aos-duration="1000" data-aos-once="true" class="col-md-6 flex-md-last">
+                    <h2 class="font-weight-bold">Why use our platform ?</h2>
+                    <p class="my-4">
+                        Imagine you're a solo traveler eager to explore Valencia. With SyncRent, find a dream villa, share
+                        costs with fellow adventurers, and embark on a collaborative journey where every stay becomes a
+                        shared adventure. Join SyncRent, where solo experiences transform into vibrant communal stories.
+                    </p>
+
+                </div>
+                <div data-aos="fade-right" data-aos-duration="1000" data-aos-once="true"
+                    class="col-md-6 align-self-center flex-md-first">
+                    <img src="img/Group1.png" alt="Safe and reliable" class="mx-auto d-block">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- price table -->
+    <div class="container my-5 py-2" id="price-table">
+        <h2 class="text-center font-weight-bold d-block mb-3">Check our pricing</h2>
+        <div class="row">
+            <div data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000" data-aos-once="true"
+                class="col-md-4 text-center py-4 mt-5">
+                <h4 class="my-4">STARTUP</h4>
+                <p class="font-weight-bold">$ <span class="display-2 font-weight-bold">0</span> / MO.</p>
+                <ul class="list-unstyled">
+                    <li>Up to 5 Documents</li>
+                    <li>Up to 3 Reviews</li>
+                    <li>5 team Members</li>
+                    <li>Limited Support</li>
+                </ul>
+                <a href="#" class="btn my-4 font-weight-bold atlas-cta cta-ghost">Get Free</a>
+            </div>
+            <div data-aos="fade-up" data-aos-duration="1000" data-aos-once="true"
+                class="col-md-4 text-center py-4 mt-5 rounded" id="price-table__premium">
+                <h4 class="my-4">PREMIUM</h4>
+                <p class="font-weight-bold">$ <span class="display-2 font-weight-bold">10</span> / MO.</p>
+                <ul class="list-unstyled">
+                    <li>Up to 15 Documents</li>
+                    <li>Up to 10 Reviews</li>
+                    <li>25 team Members</li>
+                    <li>Limited Support</li>
+                </ul>
+                <a href="#" class="btn my-4 font-weight-bold atlas-cta cta-green">Get Free</a>
+            </div>
+            <div data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000" data-aos-once="true"
+                class="col-md-4 text-center py-4 mt-5">
+                <h4 class="my-4">PROFESSIONAL</h4>
+                <p class="font-weight-bold">$ <span class="display-2 font-weight-bold">30</span> / MO.</p>
+                <ul class="list-unstyled">
+                    <li>Unlimited Documents</li>
+                    <li>Unlimited Reviews</li>
+                    <li>Unlimited Members</li>
+                    <li>Unlimited Support</li>
+                </ul>
+                <a href="#" class="btn my-4 font-weight-bold atlas-cta cta-ghost">Get Free</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- client -->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 col-md-2 py-2 align-self-center">
+                    <img src="img/client-1.png" class="mx-auto d-block">
+                </div>
+                <div class="col-sm-4 col-md-2 py-2 align-self-center">
+                    <img src="img/client-2.png" class="mx-auto d-block">
+                </div>
+                <div class="col-sm-4 col-md-2 py-2 align-self-center">
+                    <img src="img/client-3.png" class="mx-auto d-block">
+                </div>
+                <div class="col-sm-4 col-md-2 py-2 align-self-center">
+                    <img src="img/client-4.png" class="mx-auto d-block">
+                </div>
+                <div class="col-sm-4 col-md-2 py-2 align-self-center">
+                    <img src="img/client-5.png" class="mx-auto d-block">
+                </div>
+                <div class="col-sm-4 col-md-2 py-2 align-self-center">
+                    <img src="img/client-6.png" class="mx-auto d-block">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- contact -->
+    <div class="jumbotron jumbotron-fluid" id="contact" style="background-image: url(img/contact-bk.jpg);">
+        <div class="container my-5">
+            <div class="row justify-content-between">
+                <div class="col-md-6 text-white">
+                    <h2 class="font-weight-bold">Contact Us</h2>
+                    <p class="my-4">
+                        Got questions or suggestions? We're all ears! Reach out to SyncRent <br> for any inquiries or assistance. 
+                    </p>
+                    <ul class="list-unstyled">
+                        <li>Email : ur_company_email@com</li>
+                        <li>Phone : +40 20155488</li>
+                        <li>Address : address</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <form>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="name">Your Name</label>
+                                <input type="name" class="form-control" id="name">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="Email">Your Email</label>
+                                <input type="email" class="form-control" id="Email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea class="form-control" id="message" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn font-weight-bold atlas-cta atlas-cta-wide cta-green my-3">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- copyright -->
+    <div class="jumbotron jumbotron-fluid" id="copyright">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-md-6 text-white align-self-center text-center text-md-left my-2">
+                    Copyright © 2023 Salvatore Coluccia
+                </div>
+                <div class="col-md-6 align-self-center text-center text-md-right my-2" id="social-media">
+                    <a href="#" class="d-inline-block text-center ml-2">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="d-inline-block text-center ml-2">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="d-inline-block text-center ml-2">
+                        <i class="fa fa-medium" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="d-inline-block text-center ml-2">
+                        <i class="fa fa-linkedin" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AOS -->
+    <script src="js/aos.js"></script>
+    <script>
+        AOS.init({
+        });
+    </script>
+</body>
+
+</html>
